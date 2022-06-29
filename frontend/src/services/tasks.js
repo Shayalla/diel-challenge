@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = "http://localhost:3001/products"
+const baseUrl = "http://localhost:3001/tasks"
 
 export const createTask = async(product) => {
   try {
@@ -22,6 +22,16 @@ export const allTasks = async() => {
 export const delTask = async(id) => {
   try {
     await axios.delete(`${baseUrl}/${id}`);
+  } catch(error) {
+    console.log(error);
+  }
+};
+
+export const taskByTitle = async(title) => {
+  try {
+    const tasks = await axios.get(`${baseUrl}/?title_like=${title}`);
+    console.log(tasks);
+    return tasks.data;
   } catch(error) {
     console.log(error);
   }

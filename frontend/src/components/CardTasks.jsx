@@ -9,11 +9,11 @@ function CardTasks({ task: { id, title, description, date, hour, duration} }) {
     <li>
       <p>{title}</p>
       <p>{description}</p>
-      <p>{date}</p>
+      <p>{date.split('-').reverse().join('/')}</p>
       <p>{hour}</p>
       <p>{duration} min</p>
       <button>Editar</button>
-      <button onClick={ () => deleteTask(id) }>Excluir</button>
+      <button type="button" onClick={ () => deleteTask(id) }>Excluir</button>
     </li>
   )
 };
