@@ -26,7 +26,7 @@ function NewTasks() {
         <input type="time" id="hour" name="hour" onChange={ (e) => handleChange(e) } />
       </label>
       <label htmlFor="duration">
-        <input type="text" id="duration" name="duration" onChange={ (e) => handleChange(e) } />
+        <input type="number" id="duration" name="duration" onChange={ (e) => handleChange(e) } />min
       </label>
       <button type="submit" onClick={ () => postTask(newTask) }>
         Salvar

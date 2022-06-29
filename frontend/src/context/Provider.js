@@ -12,13 +12,15 @@ function Provider({ children }) {
     setTasks(data);
   };
 
-  const postTask = async(task) => {
-    const nTask = await createTask(task);
-    setTasks([...tasks, nTask]);
+  const postTask = async(e, task) => {
+    e.preventDefault();
+    await createTask(task);
+    getTasks();
   };
 
   const deleteTask = async(id) => {
     await delTask(id);
+    getTasks();
   };
 
   useEffect(() => {
