@@ -1,0 +1,21 @@
+.formNewTasks {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 1px #6610f2 solid;
+  border-radius: 3%;
+  padding: 3px;
+  box-shadow: 3px 3px 6px #6610f2;
+  background-color: #6358f6;
+  width: 350px;
+  height: 130px;
+}
+
+.buttonNewTask {
+  width: 120px;
+  border-radius: 5px;
+  background-color: #9790ff;
+}

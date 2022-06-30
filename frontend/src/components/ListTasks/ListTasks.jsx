@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
-import Context from '../context/Context';
-import CardTasks from './CardTasks';
+import Context from '../../context/Context';
+import CardTasks from '../CardTasks/CardTasks';
+import './ListTasks.css';
 
 function ListTasks() {
   const { tasks } = useContext(Context);

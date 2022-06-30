@@ -1,0 +1,23 @@
+.inputs {
+  line-height: 30px;
+}
+
+.buttonEdit {
+  margin: 5px;
+  border-radius: 10%;
+}
+
+.formEdit {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+  border: 1px #6610f2 solid;
+  border-radius: 3%;
+  padding: 3px;
+  box-shadow: 3px 3px 6px #6610f2;
+  background-color: #6358f6;
+}

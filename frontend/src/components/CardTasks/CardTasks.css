@@ -1,0 +1,24 @@
+li {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+  border: 1px #6610f2 solid;
+  border-radius: 3%;
+  padding: 3px;
+  box-shadow: 3px 3px 6px #6610f2;
+  background-color: #b790ff;
+}
+
+.buttonCard {
+  margin: 2px;
+  border-radius: 5px;
+  background-color:#c5aaf1;
+}
+
+p {
+  width: 150px;
+  word-wrap: break-word;
+  line-height: 15px;
+}
