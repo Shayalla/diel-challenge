@@ -7,9 +7,11 @@ function ListTasks() {
   const { tasks } = useContext(Context);
   return (
     <ul>
-      {tasks.map((task) => (
-        <CardTasks key={task._id} task={task} />
-      ))}
+      { tasks.length !== 0
+        ? tasks.map((task) => (
+          <CardTasks key={task._id} task={task} />
+        ))
+      : <p>Sem tarefas!!!</p> }
     </ul>
   )
 };

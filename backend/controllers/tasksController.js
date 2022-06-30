@@ -31,10 +31,17 @@ const findByTitle = async (req, res) => {
   return res.status(200).json([task]);
 };
 
+const findByDate = async (req, res) => {
+  const { search } = req.query;
+  const task = await tasksService.findByDate(search);
+  return res.status(200).json([task]);
+};
+
 module.exports = {
   create,
   getAll,
   update,
   delTask,
-  findByTitle
+  findByTitle,
+  findByDate
 };

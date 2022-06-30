@@ -6,6 +6,11 @@ const findByTitle = async (title) => {
   return find;
 }; 
 
+const findByDate = async (date) => { 
+  const find = await connection().then((db) => db.collection('tasks').findOne({ date }));
+  return find;
+}; 
+
 const findAll = async () => {
   const find = await connection().then((db) => db.collection('tasks').find().toArray());
   return find;
@@ -31,6 +36,7 @@ const deleteById = async (id) => ObjectId.isValid(id)
 
 module.exports = {
   findByTitle,
+  findByDate,
   addTask,
   findAll,
   updateTask,

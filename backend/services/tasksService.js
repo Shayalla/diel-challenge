@@ -8,7 +8,12 @@ const findAllTasks = async () => {
 const findBytitle = async (title) => {
   const tasks = await tasksModel.findByTitle(title);
   return tasks;
-}
+};
+
+const findByDate = async (date) => {
+  const tasks = await tasksModel.findByDate(date);
+  return tasks;
+};
 
 const createTask = async (task) => {
   const newTask = await tasksModel.addTask(task);
@@ -28,6 +33,7 @@ module.exports = {
   createTask,
   findAllTasks,
   findBytitle,
+  findByDate,
   upTask,
   deleteTask,
 };

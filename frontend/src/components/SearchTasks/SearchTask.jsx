@@ -3,8 +3,18 @@ import Context from '../../context/Context';
 import './SearchTask.css';
 
 function SearchTask() {
-  const { searchByTitle } = useContext(Context);
+  const { searchByTitle, searchByDate } = useContext(Context);
   const [search, setSearch] = useState('');
+
+  const handleChangeSearch = ({ name, value }) => {
+    setSearch({ [name]:value})
+  };
+
+  const buttonSearch = () => {
+    search.title
+      ? searchByTitle(search.title)
+      : searchByDate(search.date)
+  };
 
   return (
     <div className="search">
@@ -13,13 +23,20 @@ function SearchTask() {
             type="text"
             id="search"
             className="inputSearch"
-            onChange={ ({ target }) => setSearch(target.value) }
+            name="title"
+            onChange={ ({ target }) => handleChangeSearch(target) }
           />
       </label>
+      <input
+        type="date"
+        name="date"
+        className="inputSearch"
+        onChange={ ({ target }) => handleChangeSearch(target) }
+      />
       <button
         type="button"
         className="buttonSearch"
-        onClick={ () => searchByTitle(search) }
+        onClick={ buttonSearch }
       >
         Pesquisar
       </button>

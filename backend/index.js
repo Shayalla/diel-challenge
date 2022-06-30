@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const { getAll, update, create, delTask, findByTitle } = require('./controllers/tasksController');
+const { getAll, update, create, delTask, findByTitle, findByDate } = require('./controllers/tasksController');
 
 const app = express();
 app.use(bodyParser.json());
@@ -9,7 +9,9 @@ app.use(cors());
 
 const PORT = '3001';
 
-app.get('/query', findByTitle);
+app.get('/queryTitle', findByTitle);
+
+app.get('/queryDate', findByDate);
 
 app.route('/:id')
   .delete(delTask)
