@@ -7,11 +7,11 @@ function NewTasks() {
 
   return (
     <form action="">
-      <InputTask type="text" name="title" />
-      <InputTask type="text" name="description" />
-      <InputTask type="date" name="date" />
-      <InputTask type="time" name="hour" />
-      <InputTask type="number" name="duration" />min
+      <InputTask type="text" name="title" value={ newTask.title } />
+      <InputTask type="text" name="description" value={ newTask.description } />
+      <InputTask type="date" name="date" value={ newTask.date } />
+      <InputTask type="time" name="hour" value={ newTask.hour } />
+      <InputTask type="number" name="duration" value={ newTask.duration } />min
       <button type="button" onClick={ () => postTask(newTask) }>
         Salvar
       </button>

@@ -1,25 +1,26 @@
 import React, { useContext } from 'react';
 import Context from '../context/Context';
+import InputTask from './InputTask';
 
-function EditTasks({ id, edit }) {
-  const { newTask, editTask, handleChange } = useContext(Context);
+function EditTasks({ id, setEdit }) {
+  const { newEdit, editTask } = useContext(Context);
 
   const save = () => {
-    editTask(id, newTask);
-    edit(false);
+    editTask(id, newEdit);
+    setEdit(false);
   };
 
   return (
     <div>
-      <input type="text" name="title" placeholder="title" onChange={ ({target}) => handleChange(target) } /><br />
-      <input type="text" name="description" placeholder="description" onChange={ ({target}) => handleChange(target) } /><br />
-      <input type="date" name="date" placeholder="date" onChange={ ({target}) => handleChange(target) } /><br />
-      <input type="time" name="hour" placeholder="hour" onChange={ ({target}) => handleChange(target) } /><br />
-      <input type="number" name="duration" placeholder="duration" onChange={ ({target}) => handleChange(target) } />min <br />
+      <InputTask type="text" name="title" value={ newEdit.title } edit /><br />
+      <InputTask type="text" name="description" value={ newEdit.description } edit /><br />
+      <InputTask type="date" name="date" value={ newEdit.date } edit /><br />
+      <InputTask type="time" name="hour" value={ newEdit.hour } edit /><br />
+      <InputTask type="number" name="duration" value={ newEdit.duration } edit /> min <br />
       <button type="button" onClick={ save }>
         Salvar
       </button>
-      <button type="button" onClick={ () => edit(false) }>
+      <button type="button" onClick={ () => setEdit(false) }>
         Cancelar
       </button>
     </div>

@@ -6,9 +6,10 @@ import EditTasks from './EditTasks';
 function CardTasks({ task: { id, title, description, date, hour, duration} }) {
   const { deleteTask } = useContext(Context);
   const [edit, setEdit] = useState(false)
+
   const dateFormated = date.split('-').reverse().join('/');
 
-  return edit ?  <EditTasks id={ id } edit={ setEdit } /> : (
+  return edit ?  <EditTasks id={ id } setEdit={ setEdit } /> : (
     <li>
       <p>{title}</p>
       <p>{description}</p>
@@ -17,7 +18,6 @@ function CardTasks({ task: { id, title, description, date, hour, duration} }) {
       <p>{duration} min</p>
       <button type="button" onClick={ () => setEdit(true) }>Editar</button>
       <button type="button" onClick={ () => deleteTask(id) }>Excluir</button>
-      {/* {edit && <EditTasks id={ id } edit={ setEdit } />} */}
     </li>
   )
 };

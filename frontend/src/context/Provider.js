@@ -6,6 +6,7 @@ import { allTasks, createTask, delTask, editTasks, taskByTitle } from '../servic
 function Provider({ children }) {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState({});
+  const [newEdit, setNewEdit] = useState({});
 
   const getTasks = async() => {
     const { data } = await allTasks();
@@ -39,11 +40,10 @@ function Provider({ children }) {
     setTasks(tasks);
   };
 
-  const handleChange = ({ name, value }) => {
-    setNewTask({
-      ...newTask,
-      [name]: value
-    });
+  const handleChange = ({ name, value }, edit) => {
+    edit 
+    ? setNewEdit({ ...newEdit, [name]: value })
+    : setNewTask({ ...newTask, [name]: value });
   };
 
   useEffect(() => {
@@ -53,6 +53,7 @@ function Provider({ children }) {
   const states = {
     tasks,
     newTask,
+    newEdit,
     setNewTask,
     postTask,
     editTask,
