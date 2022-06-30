@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import Context from './Context';
-import { allTasks, createTask, delTask, editTasks, taskByTitle } from '../services/tasks';
+import { allTasks, createTask, delTask, editTasks, taskByDate, taskByTitle } from '../services/tasks';
 
 function Provider({ children }) {
   const [tasks, setTasks] = useState([]);
@@ -40,6 +40,11 @@ function Provider({ children }) {
     setTasks(tasks);
   };
 
+  const searchByDate = async(date) => {
+    const tasks = await taskByDate(date);
+    setTasks(tasks);
+  };
+
   const handleChange = ({ name, value }, edit) => {
     edit 
     ? setNewEdit({ ...newEdit, [name]: value })
@@ -54,6 +59,7 @@ function Provider({ children }) {
     tasks,
     newTask,
     newEdit,
+    searchByDate,
     setNewTask,
     postTask,
     editTask,
