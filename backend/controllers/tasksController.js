@@ -10,7 +10,7 @@ const update = async (req, res) => {
   const { id } = req.params;
   const { title, description, date, hour, duration } = req.body;
   const task = await tasksService.upTask({ id, title, description, date, hour, duration });
-  return res.status(200).json(tasks);
+  return res.status(200).json(task);
 };
 
 const getAll = async (_req, res) => {
@@ -29,7 +29,7 @@ const delTask = async (req, res) => {
 const findByTitle = async (req, res) => {
   const { search } = req.query;
   const task = await tasksService.findBytitle(search);
-  console.log(task);
+  console.log([task]);
   return res.status(200).json(task);
 };
 
