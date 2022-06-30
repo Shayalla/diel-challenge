@@ -1,4 +1,4 @@
-#Desafio FullStack Jr. Empresa Diel Energia
+# Desafio FullStack Jr. Empresa Diel Energia
 Esse projeto foi desenvolvido por Jéssica Schulze, como um teste técnico para a Empresa Diel Energia.
 Foram utilizados React, JavaScript, HTML, CSS, Node.js, Express.js nesse projeto.
 
