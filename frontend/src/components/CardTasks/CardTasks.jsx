@@ -7,7 +7,6 @@ import './CardTasks.css';
 function CardTasks({ task: { _id, title, description, date, hour, duration } }) {
   const { deleteTask } = useContext(Context);
   const [edit, setEdit] = useState(false)
-console.log(_id);
   const dateFormated = date.split('-').reverse().join('/');
 
   return edit
