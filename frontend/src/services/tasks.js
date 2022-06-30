@@ -2,18 +2,27 @@ import axios from 'axios';
 
 const baseUrl = "http://localhost:3001/tasks"
 
-export const createTask = async(product) => {
+export const allTasks = async() => {
   try {
-    await axios.post(baseUrl, product);
+    const tasks = await axios.get(baseUrl);
+    return tasks;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const createTask = async(task) => {
+  try {
+    await axios.post(baseUrl, task);
   } catch (error) {
     console.log(error);
   };
 };
 
-export const allTasks = async() => {
+export const editTasks = async(id, task) => {
   try {
-    const tasks = await axios.get(baseUrl);
-    return tasks;
+    const edit = await axios.put(`${baseUrl}/${id}`, task);
+    console.log(edit);
   } catch (error) {
     console.log(error);
   }

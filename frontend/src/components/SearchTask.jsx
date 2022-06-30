@@ -7,7 +7,7 @@ function SearchTask() {
 
   return (
     <div>
-      <label htmlFor="search">
+      <label htmlFor="search"> Pesquisa:
           <input type="text" id="search" onChange={ ({ target }) => setSearch(target.value) } />
       </label>
       <button type="button" onClick={ () => searchByTitle(search) }>Pesquisar</button>
