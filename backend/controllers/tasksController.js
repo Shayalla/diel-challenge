@@ -15,7 +15,6 @@ const update = async (req, res) => {
 
 const getAll = async (_req, res) => {
   const { tasks } = await tasksService.findAllTasks();
-  console.log(tasks);
   return res.status(200).json(tasks);
 };
 
@@ -29,8 +28,7 @@ const delTask = async (req, res) => {
 const findByTitle = async (req, res) => {
   const { search } = req.query;
   const task = await tasksService.findBytitle(search);
-  console.log([task]);
-  return res.status(200).json(task);
+  return res.status(200).json([task]);
 };
 
 module.exports = {
