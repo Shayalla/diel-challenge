@@ -1,11 +1,12 @@
 import axios from 'axios';
 
-const baseUrl = "http://localhost:3001/tasks"
+const baseUrl = "http://localhost:3001"
 
 export const allTasks = async() => {
   try {
-    const tasks = await axios.get(baseUrl);
-    return tasks;
+    const { data } = await axios.get(baseUrl);
+    console.log(data);
+    return data;
   } catch (error) {
     console.log(error);
   }
@@ -22,7 +23,7 @@ export const createTask = async(task) => {
 export const editTasks = async(id, task) => {
   try {
     const edit = await axios.put(`${baseUrl}/${id}`, task);
-    console.log(edit);
+    console.log(edit, id);
   } catch (error) {
     console.log(error);
   }
@@ -38,7 +39,7 @@ export const delTask = async(id) => {
 
 export const taskByTitle = async(title) => {
   try {
-    const tasks = await axios.get(`${baseUrl}/?title_like=${title}`);
+    const tasks = await axios.get(`${baseUrl}/query/?search=${title}`);
     console.log(tasks);
     return tasks.data;
   } catch(error) {

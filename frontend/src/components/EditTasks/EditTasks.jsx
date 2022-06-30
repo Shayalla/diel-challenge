@@ -47,7 +47,7 @@ function EditTasks({ id, setEdit }) {
         <button
           type="button"
           className="buttonEdit"
-          onClick={ save}
+          onClick={ save }
         >
           Salvar
         </button>

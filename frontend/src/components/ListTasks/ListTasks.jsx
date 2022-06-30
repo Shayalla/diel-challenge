@@ -8,7 +8,7 @@ function ListTasks() {
   return (
     <ul>
       {tasks.map((task) => (
-        <CardTasks key={task.id} task={task} />
+        <CardTasks key={task._id} task={task} />
       ))}
     </ul>
   )

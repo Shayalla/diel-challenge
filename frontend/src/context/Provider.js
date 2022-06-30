@@ -9,7 +9,7 @@ function Provider({ children }) {
   const [newEdit, setNewEdit] = useState({});
 
   const getTasks = async() => {
-    const { data } = await allTasks();
+    const task = await allTasks();
     setNewTask({
       title: '',
       description: '',
@@ -17,7 +17,7 @@ function Provider({ children }) {
       hour: '',
       duration: '',
     });
-    setTasks(data);
+    setTasks(task);
   };
 
   const postTask = async(task) => {
